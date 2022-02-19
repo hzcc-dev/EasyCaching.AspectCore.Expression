@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../build/common.props" />
+	<PropertyGroup>
+		<Description>
+			A simple caching AOP extension library based on AspectCore.
+		</Description>
+		<PackageId>EasyCaching.ExpressionInterceptor.AspectCore</PackageId>
+		<PackageTags>Interceptor,AspectCore,AOP,Caching,Cache,Autowire</PackageTags>
+		<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Authors>softworm</Authors>
+		<RepositoryUrl>https://github.com/hzcc-dev/EasyCaching.AspectCore.Expression</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/hzcc-dev/EasyCaching.AspectCore.Expression</PackageProjectUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../LICENSE" Pack="true" Visible="false" PackagePath="" />
+		<None Include="../../media/nuget-icon.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="2.2.0" />
+		<PackageReference Include="EasyCaching.Core" Version="1.5.0" />
+	</ItemGroup>
+</Project>
