@@ -228,8 +228,10 @@ namespace EasyCaching.ExpressionInterceptor.AspectCore
         /// <param name="isBefore">If set to <c>true</c> is before.</param>
         private async Task ProcessEvictAsync(AspectContext context, bool isBefore)
         {
-            if (GetMethodAttributes(context.ServiceMethod).FirstOrDefault(x => typeof(EasyCachingEvictAttribute).IsAssignableFrom(x.GetType())) is EasyCachingEvictAttribute attribute && attribute.IsBefore == isBefore)
+            var attrs = GetMethodAttributes(context.ServiceMethod).Where(x => typeof(EasyCachingEvictAttribute).IsAssignableFrom(x.GetType()) && (x as EasyCachingEvictAttribute).IsBefore == isBefore);
+            foreach(var attr in attrs)
             {
+                var attribute  = attr as EasyCachingEvictAttribute;
                 try
                 {
                     if (attribute.IsAll)
