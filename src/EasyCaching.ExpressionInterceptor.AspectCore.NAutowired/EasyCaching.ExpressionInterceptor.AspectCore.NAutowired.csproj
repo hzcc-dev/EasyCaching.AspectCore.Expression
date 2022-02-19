@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="../../build/common.props" />
+	<PropertyGroup>
+		<Description>
+			A simple caching AOP extension library based on AspectCore with NAutowired enabled.
+		</Description>
+		<PackageId>EasyCaching.ExpressionInterceptor.AspectCore.NAutowired</PackageId>
+		<PackageTags>Interceptor,AspectCore,AOP,Caching,Cache,Autowire</PackageTags>
+		<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Authors>softworm</Authors>
+		<RepositoryUrl>https://github.com/hzcc-dev/EasyCaching.AspectCore.Expression</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/hzcc-dev/EasyCaching.AspectCore.Expression</PackageProjectUrl>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>$(NoWarn);1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspectCore.Extensions.DependencyInjection.NAutowired" Version="3.0.0" />
+		<PackageReference Include="EasyCaching.Core" Version="1.5.0" />
+	</ItemGroup>
+</Project>
